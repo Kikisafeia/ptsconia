@@ -24,8 +24,15 @@ ${result.quality}
 ${result.compliance_summary}
 `;
   return (
-    <div className="bg-white rounded-lg shadow p-6 mt-4">
-      <ReactMarkdown className="prose max-w-none">
+    <div 
+      className="bg-white rounded-lg shadow p-6 mt-4"
+      role="region"
+      aria-label="Resultados del análisis"
+    >
+      <ReactMarkdown 
+        className="prose max-w-none"
+        aria-labelledby="results-heading"
+      >
         {markdownContent}
       </ReactMarkdown>
 
@@ -35,6 +42,7 @@ ${result.compliance_summary}
           className="inline-flex items-center px-4 py-2 border border-transparent rounded-md 
                      text-sm font-medium text-white bg-safeia-yellow hover:bg-safeia-yellow-dark 
                      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-safeia-yellow"
+          aria-label="Confirmar y enviar resultados al webhook"
         >
           Confirmar y Enviar al Webhook
         </button>
