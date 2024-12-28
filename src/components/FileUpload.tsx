@@ -42,10 +42,19 @@ export const FileUpload: React.FC = () => {
         {...getRootProps()}
         className={`p-8 border-2 border-dashed rounded-lg transition-colors
           ${isDragActive ? 'border-safeia-yellow bg-safeia-bg' : 'border-safeia-gray'}`}
+        role="region"
+        aria-label="Área de carga de archivos"
       >
-        <input {...getInputProps()} />
-        <div className="flex flex-col items-center justify-center text-safeia-gray">
-          <Upload className="w-12 h-12 mb-4" />
+        <input 
+          {...getInputProps()} 
+          aria-label="Seleccionar archivo"
+          aria-describedby="file-upload-instructions"
+        />
+        <div 
+          className="flex flex-col items-center justify-center text-safeia-gray"
+          id="file-upload-instructions"
+        >
+          <Upload className="w-12 h-12 mb-4" aria-hidden="true" />
           <p className="text-lg font-medium">
             {isDragActive
               ? 'Suelta los archivos aquí...'
