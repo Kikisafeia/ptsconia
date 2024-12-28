@@ -40,7 +40,7 @@ export const FileUpload: React.FC = () => {
       
       <div
         {...getRootProps()}
-        className={`p-8 border-2 border-dashed rounded-lg transition-colors
+        className={`p-4 md:p-8 border-2 border-dashed rounded-lg transition-colors
           ${isDragActive ? 'border-safeia-yellow bg-safeia-bg' : 'border-safeia-gray'}`}
         role="region"
         aria-label="Área de carga de archivos"
@@ -51,16 +51,16 @@ export const FileUpload: React.FC = () => {
           aria-describedby="file-upload-instructions"
         />
         <div 
-          className="flex flex-col items-center justify-center text-safeia-gray"
+          className="flex flex-col items-center justify-center text-safeia-gray text-center"
           id="file-upload-instructions"
         >
-          <Upload className="w-12 h-12 mb-4" aria-hidden="true" />
-          <p className="text-lg font-medium">
+          <Upload className="w-8 h-8 md:w-12 md:h-12 mb-2 md:mb-4" aria-hidden="true" />
+          <p className="text-base md:text-lg font-medium">
             {isDragActive
               ? 'Suelta los archivos aquí...'
               : 'Arrastra y suelta archivos aquí, o haz clic para seleccionar'}
           </p>
-          <p className="mt-2 text-sm">
+          <p className="mt-1 md:mt-2 text-xs md:text-sm">
             Formatos soportados: PDF, DOCX, TXT (máx. 10MB)
           </p>
         </div>
